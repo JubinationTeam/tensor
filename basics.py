@@ -38,8 +38,10 @@ no=len(train_y[0])
 
 #weight initialization
 np.random.seed(1)
-w0=2*np.random.rand(ni,nh1)-1
-w1=2*np.random.rand(nh1,no)-1
+w0=2*np.random.rand(ni,nh1+1)-1
+w1=2*np.random.rand(nh1,no+1)-1
+
+
 
 #sigmoid
 def sigmoid(z,Deriv=False):
