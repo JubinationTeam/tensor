@@ -38,8 +38,10 @@ no=len(train_y[0])
 
 #weight initialization
 np.random.seed(1)
-w0=2*np.random.rand(ni,nh1+1)-1
-w1=2*np.random.rand(nh1,no+1)-1
+w0=2*np.random.rand(ni,nh1)-1
+w1=2*np.random.rand(nh1,no)-1
+b0=2*np.random.rand(nh1)-1
+b1=2*np.random.rand(no)-1
 
 
 
@@ -51,9 +53,9 @@ def sigmoid(z,Deriv=False):
 
 #feed forward
 def predict(x,w0,w1):
-    z0=x.dot(w0)
+    z0=x.dot(w0)+b0
     a0=sigmoid(z0)
-    z1=a0.dot(w1)
+    z1=a0.dot(w1)+b1
     a1=sigmoid(z1)
     y_=a1
     return [z0,z1,a0,a1]
