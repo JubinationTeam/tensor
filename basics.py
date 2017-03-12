@@ -26,12 +26,14 @@ predict_y = np.array([[1],
                     [0],
                     [1],
                     [0]])
+error=0.00000001
+nh1=25
 
 #sizes
 datasize=len(train_x)
 ni=len(train_x[0])
 no=len(train_y[0])
-nh1=3
+
 
 
 #weight initialization
@@ -127,4 +129,4 @@ def predict_print(predict_x,predict_y,w0,w1):
     print("Throughput of "+str(throughput)+"%") 
     print("================\n")
     return
-operate(predict_x,predict_y,train_x,train_y,w0,w1,0.00000001)    
+operate(predict_x,predict_y,train_x,train_y,w0,w1,error)    
